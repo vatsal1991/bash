@@ -1,2 +1,31 @@
-# some text file on git from web
+# 
+#
 
+# from "lsblk" get info on storage which is not partitioned.
+# in our case it is /dev/sda
+# run fdisk over that disk type
+ fdisk /dev/sda
+
+# Press 'n' for creating new partition, 'p' for primary partition, 
+# select the partition number eg. 1, select sectors or proceed with defaults,
+# press 'w' to write changes 
+#
+#
+# Now format the partition, the partition path can be obtained via 'lsblk'
+mkfs.ext4 /dev/sda1 
+
+#mount the partition to appropriate path. Make sure that the directory exist 
+mount /dev/sda1 /mnt/part1
+
+#Voila!! Partitional created, mounted and can be checked in lsblk
+#
+#
+#
+#OPTIONAL
+#How to set the partition to 'read only. Data is NOT lost by doing this.  
+umount /mnt/part1
+mount -o ro /dev/sda /mnt/part1
+
+#How to delete the partition? u(n)mount and delete the partition
+umount /dev/sda1
+fdisk /dev/sda # in this step delete the partition and write the changes
