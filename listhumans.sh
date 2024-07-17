@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#This code returns human users i.e. uid more than 1000 from the list of /etc/passwd file
+#This code returns human users i.e. uid > 1000, from the list of /etc/passwd file
 #You can use this cmd to get human accounts or user accounts in your system
 #It filters users based on their uid
 
