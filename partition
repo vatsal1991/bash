@@ -4,7 +4,7 @@
 # from "lsblk" get info on storage which is not partitioned.
 # in our case it is /dev/sda
 # run fdisk over that disk type
- fdisk /dev/sda
+fdisk /dev/sda
 
 # Press 'n' for creating new partition, 'p' for primary partition, 
 # select the partition number eg. 1, select sectors or proceed with defaults,
