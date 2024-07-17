@@ -1,6 +1,3 @@
-# 
-#
-
 # from "lsblk" get info on storage which is not partitioned.
 # in our case it is /dev/sda
 # run fdisk over that disk type
