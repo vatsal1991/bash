@@ -1,0 +1,29 @@
+# The information provided is based on standard practices for customizing the Bash shell prompt using ANSI escape codes. 
+# These practices are well-documented in various official and community sources related to Unix-like operating systems, including Red Hat, 
+
+
+# Color definitions
+Black='\[\e[0;30m\]'
+Red='\[\e[0;31m\]'
+Green='\[\e[0;32m\]'
+Yellow='\[\e[0;33m\]'
+Blue='\[\e[0;34m\]'
+Purple='\[\e[0;35m\]'
+Cyan='\[\e[0;36m\]'
+White='\[\e[0;37m\]'
+
+# Bold
+BBlack='\[\e[1;30m\]'
+BRed='\[\e[1;31m\]'
+BGreen='\[\e[1;32m\]'
+BYellow='\[\e[1;33m\]'
+BBlue='\[\e[1;34m\]'
+BPurple='\[\e[1;35m\]'
+BCyan='\[\e[1;36m\]'
+BWhite='\[\e[1;37m\]'
+
+# Reset
+Reset='\[\e[0m\]'
+
+# Custom PS1
+PS1="${BGreen}\u${Yellow}@${BBlue}\h${Reset} \w\$ "
