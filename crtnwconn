@@ -1,0 +1,12 @@
+#Create a connections using this command
+nmcli conn add type ethernet con-name eth11 ifname ens160 ip4 192.168.247.152/24 gw4 192.168.247.2
+
+#update dns
+nmcli conn modify eth11 ipv4.dns 8.8.8.8
+
+#OPTIONAL
+#Activate that interface
+nmcli conn up eth11
+
+#verify that connection
+nmcli conn sh
