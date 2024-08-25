@@ -1,5 +1,5 @@
 # bash
-Writing scripts, code and anything that I like relating to RHCSA learning! 
+Writing scripts, code and anything that I like relating to RHCSA/RHCE learning! 
 
 ## Table of Contents
 - Code
