@@ -2,3 +2,4 @@
 
 ```
 for user in tom dick harry; do echo $user:123456 |chpasswd ; done
+```
