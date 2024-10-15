@@ -1,6 +1,5 @@
-# The information provided is based on standard practices for customizing the Bash shell prompt using ANSI escape codes. 
-# These practices are well-documented in various official and community sources related to Unix-like operating systems, including Red Hat, 
-
+### The information provided is based on standard practices for customizing the Bash shell prompt using ANSI escape codes. 
+### These practices are well-documented in various official and community sources related to Unix-like operating systems, including Red Hat.
 
 # Color definitions
 Black='\[\e[0;30m\]'
@@ -28,9 +27,11 @@ Reset='\[\e[0m\]'
 # Custom PS1
 PS1="${BGreen}\u${Yellow}@${BBlue}\h${Reset} \w\$ "
 
-
-#set necessary alias
-alias k='kubectl'
-alias kdr='kubectl --dry-run=client'
+### ALIAS KINGDOM ### 
+# system alias
 alias s='systemctl'
 alias humans="awk -F ':' '\$3 >= 1000 && \$3 < 64434 {print \$1}' /etc/passwd"
+
+# k8s alias
+alias k='kubectl'
+alias kdr='kubectl --dry-run=client'
