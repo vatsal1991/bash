@@ -38,4 +38,3 @@ alias kdr='kubectl --dry-run=client'
 
 # terraform alias
 alias tf='terraform'
-alias tf apply='terraform apply -auto-approve'
