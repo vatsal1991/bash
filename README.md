@@ -7,11 +7,11 @@ curl -s "https://raw.githubusercontent.com/vatsal1991/bash/main/clrterminal" >>~
 ```
 
 
-
 ## Install tmux on ubuntu/debian
 ```bash
 apt install tmux
 ```
+
 ## Common shortcuts
 - **Bind key** `CTRL-B`
 - Vertical split `%`
@@ -41,4 +41,34 @@ sudo apt update && sudo apt install -y terraform
 
 # Verify installation
 terraform -version
+```
+## setup terraform dir
+```
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Create project directory
+mkdir -p terraform-demo
+cd terraform-demo
+
+# Create main.tf with local provider config
+cat <<EOF > main.tf
+terraform {
+  required_providers {
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
+    }
+  }
+}
+
+provider "local" {}
+
+resource "local_file" "example" {
+  content  = "Hello, Terraform!"
+  filename = "\${path.module}/hello.txt"
+}
+EOF
 ```
