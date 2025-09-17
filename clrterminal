@@ -35,3 +35,7 @@ alias humans="awk -F ':' '\$3 >= 1000 && \$3 < 64434 {print \$1}' /etc/passwd"
 # k8s alias
 alias k='kubectl'
 alias kdr='kubectl --dry-run=client'
+
+# terraform alias
+alias tf='terraform'
+alias tf apply='terraform apply -auto-approve'
