@@ -1,0 +1,11 @@
+try { 
+$jsondata=(Get-Content -Path .\Computer-Assets1.json -Raw | ConvertFrom-Json)
+}
+catch{
+Write-Host "Caught error: $($_.Exception.Message)"
+
+}
+foreach($data in $jsondata.vendors){
+Write-Host "$($data.name)   $($data.id)"
+Write-Output "hello"
+}
