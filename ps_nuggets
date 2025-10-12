@@ -66,3 +66,47 @@ $age = @{
 
 Write-Output $age['mike']
 
+############### simple fun
+function extra(){
+param(
+#[parameters(mandatory=$false)]
+[validateset("red","blue","green")]
+[string]$color,
+[validateset("pen","pencil","box")]
+[string]$item
+)
+
+if($color -and $item){
+Write-Output "$color colored $item"
+
+}
+}
+
+##############
+$Employee = [pscustomobject] @{
+    Name = "Shan Mathew"
+    Designation = "IT Manager"
+    Country = "United States"
+}
+ 
+#Get All Properties of the Object
+ForEach ($Property in $Employee.psobject.Properties)
+{
+    Write-Host "$($Property.Name): $($Property.Value)"
+}
+
+
+#Read more: https://www.sharepointdiary.com/2020/07/powershell-foreach-loop-foreach-object-guide.html#ixzz8WtZLhOvH
+
+###########
+#  wmic useraccount get name,sid
+
+$hashtable = @{ Color = ‘Red’; Transmission = ‘Automatic’; Convertible = $false}
+
+ForEach ($a in $mycsv){
+$num=[int]0
+Write-Output "$num.  $a"
+$num++
+}
+
+
