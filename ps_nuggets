@@ -1,0 +1,68 @@
+$names="terminal","server1"
+
+Invoke-Command -ScriptBlock {
+foreach($name in $names){
+Test-Connection $name -Count 2 -BufferSize 1
+ }
+}
+
+####
+
+Write-Output "$env:Path"
+
+
+get-itemproperty -Path registry::\HKEY_LOCAL_MACHINE\SOFTWARE\Notepad++ | New-ItemProperty -Name myApp -Value 1 -PropertyType string
+
+
+$names=Get-Content "C:\Users\master\Documents\WindowsPowerShell\Scripts\names.ps1" 
+
+foreach($name in $names){Write-Output "1: $name"}
+
+##########
+try { 
+$jsondata=(Get-Content -Path .\Computer-Assets1.json -Raw | ConvertFrom-Json)
+}
+catch{
+Write-Host "Caught error: $($_.Exception.Message)"
+
+}
+foreach($data in $jsondata.vendors){
+Write-Host "$($data.name)   $($data.id)"
+Write-Output "hello"
+}
+
+###########
+# Define the list of tasks
+$tasks = 1..10 # Example tasks (e.g., computer names or any other items)
+
+# Define the script block to run in parallel
+$scriptBlock = {
+    
+    # Your script logic here
+    Write-Output "Processing task $task"
+    Start-Sleep -Seconds 2 # Simulate some work
+}
+
+## Using secure string ##
+$uname=Read-Host -Prompt "Enter your username: "
+
+$pwd=Read-Host -Prompt "Enter password: " -AsSecureString
+
+$creds=New-Object System.Management.Automation.PSCredential($uname,$pwd)
+
+Invoke-Command -ComputerName localhost -Credential $creds -
+
+
+####
+$names=@("john","sarah","mike")
+foreach($name in $names){Write-Output "Hello $name!"}
+
+
+$age = @{
+"mike"=24
+"james"=22
+"Sarah"=23
+} 
+
+Write-Output $age['mike']
+
